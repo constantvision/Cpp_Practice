@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int a = 1374;
+	int hex_res1 = 0;
+	int hex_res2 = 0;
+
+	char ssHex[16];
+	char szHex[16];
+	cout << a << endl;
+
+	_itoa(a, ssHex, 16);
+	sprintf(szHex, "%X", a);
+
+	cout << typeid(szHex).name() << "  ";
+	cout << szHex << endl;
+	cout << typeid(ssHex).name() << "  ";
+	cout << ssHex << endl;
+	
+	hex_res1 = strtol(ssHex, NULL, 16); // 16진수 10진수로 변환
+	hex_res2 = strtol(szHex, NULL, 16);
+
+	cout << typeid(hex_res1).name() << "  ";
+	cout << hex_res1 << endl;
+	cout << typeid(hex_res2).name() << "  ";
+	cout << hex_res2 << endl;
+
+	return 0;
+}
