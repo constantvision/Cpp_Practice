@@ -1,0 +1,21 @@
+#include <iostream>
+#include <iomanip>
+#include <bitset>
+
+using namespace std;
+
+int main()
+{
+	int nPageAdd = 1374;
+
+	cout << bitset<4>(nPageAdd) << endl;  // 4자리까지만 출력
+	cout << bitset<8>(nPageAdd) << endl;  // 8자리까지만 출력
+	cout << bitset<16>(nPageAdd) << endl; // 16자리까지만 출력
+  
+  // 0000 0101 0101 1110
+  //  0     5    5   E
+  
+  // 따라서, Decimal로 저장해둔 nPageAdd를 굳이 Hexa로 변경해서 가져올 필요가 없음
+ 
+	return 0;
+}
