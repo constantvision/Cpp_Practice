@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    int nTotal = 0;
+    cin >> nTotal;
+    vector<int> vArray;
+    vector<int> vResult;
+
+    int ninput = 0;
+    for(int i=0; i < nTotal; i++)
+    {
+        cin >> ninput;
+        vArray.push_back(ninput); 
+    }
+
+    int nMin = 0;
+    int nMinIdx = 0;
+    do
+    {
+        for(int i=0; i < nTotal; i++)
+        {
+        if(i == 0)
+        {
+            nMin = vArray.at(i);
+            nMinIdx = 0;
+        }
+        else
+        {
+            if(nMin > vArray.at(i))
+            {
+                nMin = vArray.at(i);
+                nMinIdx = i;   
+            }
+        }       
+        }
+        vResult.push_back(vArray.at(nMinIdx));
+        vArray.erase(vArray.begin() + nMinIdx);
+        nTotal--;
+        } while(nTotal !=0);
+    
+    for(int i=0; i < vResult.size(); i++)
+    {
+        cout << vResult.at(i) << endl;
+    }
+
+
+    return 0;
+}
